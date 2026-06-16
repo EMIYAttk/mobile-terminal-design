@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 顶部栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#FB7299"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/btn_web"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="返回浏览器"
+            android:textColor="#0000D9"
+            android:background="#FFFF00"
+            android:textSize="18sp"
+            android:paddingHorizontal="20dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="B站播放器"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="读取指定txt"
+            android:textColor="#FB7299"
+            android:background="#FFFFFF"
+            android:paddingHorizontal="12dp"/>
+    </LinearLayout>
+
+    <!-- 主体 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <!-- UP主列表 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="#F5F5F5"
+                android:gravity="center"
+                android:text="UP主列表"
+                android:textColor="#6200EE"
+                android:textSize="18sp"/>
+
+            <ListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#E8E8E8"
+                android:dividerHeight="1dp"
+                android:choiceMode="singleChoice"
+                android:listSelector="@drawable/list_selector"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#E0E0E0"/>
+
+        <!-- 视频区 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:orientation="vertical"
+            android:background="#000000">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#b1d85c"
+                android:gravity="center"
+                android:text="正在加载..."
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:max="100"
+                android:visibility="visible"
+                android:progressDrawable="@drawable/progress_drawable"/>
+
+            <WebView
+                android:id="@+id/web_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
